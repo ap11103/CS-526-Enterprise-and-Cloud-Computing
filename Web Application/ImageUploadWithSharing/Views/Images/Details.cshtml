@@ -1,0 +1,20 @@
+﻿@model ImageSharingWithUpload.Models.Image
+
+@{
+    ViewBag.Title = "Image Details";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p><img src="@Url.Content("~/data/images/"+@Model.Id+".jpg")" /></p>
+
+<p>Image id: @Model.Id</p>
+
+<p>Caption: @Model.Caption</p>
+
+<p>Description: <br />@Model.Description</p>
+
+<!-- Model date should not be null, but we have to allow nullable for custom validation. -->
+<p>Date taken: @((Model.DateTaken ?? new DateTime()).ToShortDateString())</p>
+
+<p>Uploader: @Model.Username</p>

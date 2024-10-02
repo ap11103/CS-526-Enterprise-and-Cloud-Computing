@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Upload an Image";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@model ImageSharingWithUpload.Models.Image
+
+
+<form method="post" asp-action="Upload" asp-controller="Images" enctype="multipart/form-data">
+
+    <p><div class="text-danger" asp-validation-summary="ModelOnly"></div></p>
+
+    <fieldset>
+        <legend>Enter Image Information</legend>
+        <p>
+            Image id: <input asp-for="Id" />
+            <span class="text-danger" asp-validation-for="Id"></span>
+        </p>
+        <p>
+            Caption: <input asp-for="Caption" />
+            <span class="text-danger" asp-validation-for="Caption" ></span>
+        </p>
+        <p>
+            Description:<br />
+            <textarea asp-for="Description">Enter description here.</textarea>
+            <span class="text-danger" asp-validation-for="Description" > </span>
+        </p>
+        <p>
+            Date taken: <input asp-for="DateTaken" />
+            <span class="text-danger" asp-validation-for="DateTaken" > </span>
+        </p>
+        <p>
+            <input type="file" name="ImageFile" />
+        </p>
+        <p>
+            <input type="submit" value="Upload" />
+        </p>
+    </fieldset>
+
+    <p>@ViewBag.Message</p>
+
+</form>
