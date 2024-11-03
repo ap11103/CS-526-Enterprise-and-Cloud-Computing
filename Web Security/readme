@@ -1,17 +1,4 @@
-It	is	important	that	you	take	steps	to	ensure	that	your	application	is	robust	against	
-malicious	attacks.		
-1. Access	to	the	application	should	be	restricted	to	authenticated	users,	except	for	the	
-Register and	Login actions	for	the	accounts	controller.		Use	the	Authorize attribute	to	
-restrict	access,	requiring	specific	role-based	permissions	for	certain	actions	
-(Administrator permission	to	deactivate/reactivate	users,	and	User permission	for	
-uploading	and	editing images).
-2. Protect	users	against	CSRF	attacks	using	secret	token	validation:	Any	form	that	uses	
-asp-action or	asp-controller tag	helpers	automatically	includes	a	secret	token	when	
-it	is	rendered,	and	your	code	must	then	use	ValidateAntiForgerToken to	validate	the	
-presence	of	such	a	token	when	posted	back.		You	should	also	protect	against	open	
-redirect	attacks	and	avoid	over-posting	attacks	by	never	binding	an	entity	model	using	
-the	model	binder	(use	view	models	instead).
-3. ASP.NET	applications	require	communication	over	SSL	as	a	default (to	protect	the	
-session	cookie).		In	general,	you	should	protect	against	XSS	attacks	using	HTML	
-encoding	and	use	measures	to	protect	against	cookie	stealing	(and	consider	using	a	
-library	like	AntiXSS),	but	we	will	not	require	it	for	the	assignment.
+It is important that you take steps to ensure that your application is robust against malicious attacks.  
+1. Access to the application should be restricted to authenticated users, except for the Register and Login actions for the accounts controller. Use the Authorize attribute to restrict access, requiring specific role-based permissions for certain actions (Administrator permission to deactivate/reactivate users, and User permission for uploading and editing images).
+2. Protect users against CSRF attacks using secret token validation: Any form that uses asp-action or asp-controller tag helpers automatically includes a secret token when it is rendered, and your code must then use ValidateAntiForgerToken to validate the presence of such a token when posted back. You should also protect against open redirect attacks and avoid over-posting attacks by never binding an entity model using the model binder (use view models instead).
+3. ASP.NET applications require communication over SSL as a default (to protect the session cookie). In general, you should protect against XSS attacks using HTML encoding and use measures to protect against cookie stealing (and consider using a library like AntiXSS), but we will not require it for the assignment.
