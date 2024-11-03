@@ -1,0 +1,16 @@
+{
+  "Data": {
+    "ApplicationDb": {
+      "ConnectionString": "Server=localhost;TrustServerCertificate=True",
+      "Database": "ApplicationDb"
+    }
+  },
+  
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifeti2me": "Information"
+    }
+  }
+}
